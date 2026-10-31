@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let inputA = prompt("Enter Set A elements separated by commas:");
+let inputB = prompt("Enter Set B elements separated by commas:");
+
+if (inputA === null) inputA = "";
+if (inputB === null) inputB = "";
+
+let A = new Set(inputA === "" ? [] : inputA.split(",").map(x => x.trim()));
+let B = new Set(inputB === "" ? [] : inputB.split(",").map(x => x.trim()));
+
+document.write("Set A = " + [...A].join(", ") + "<br>");
+document.write("Set B = " + [...B].join(", ") + "<br>");
+
+let union = new Set([...A, ...B]);
+document.write("Union = " + [...union].join(", ") + "<br>");
+
+let intersection = [...A].filter(x => B.has(x));
+document.write("Intersection = " + intersection.join(", ") + "<br>");
+
+let difference = [...A].filter(x => !B.has(x));
+document.write("Difference (A - B) = " + difference.join(", ") + "<br>");
+
+let symmetricDifference = [...A].filter(x => !B.has(x))
+    .concat([...B].filter(x => !A.has(x)));
+document.write("Symmetric Difference = " + symmetricDifference.join(", "));
+</script>
+</body>
+</html>

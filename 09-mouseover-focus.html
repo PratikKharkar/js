@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body id="page">
+<h1>My Home Page</h1>
+<p>Welcome to my website.</p>
+
+Enter your name:
+<input type="text" id="name" onfocus="changeFocus()">
+<button onmouseover="changeMouse()">Move Mouse Here</button>
+<button onclick="showName()">Submit</button>
+
+<p id="result"></p>
+
+<script>
+function changeMouse() {
+    document.getElementById("page").style.backgroundColor = "lightblue";
+}
+
+function changeFocus() {
+    document.getElementById("page").style.backgroundColor = "lightyellow";
+}
+
+function showName() {
+    let n = document.getElementById("name").value;
+    document.getElementById("result").innerHTML = "Welcome " + n;
+}
+</script>
+</body>
+</html>

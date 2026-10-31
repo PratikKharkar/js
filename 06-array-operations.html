@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let input = prompt("Enter array elements separated by commas:");
+if (input === null) input = "";
+
+let arr = input === "" ? [] : input.split(",").map(x => x.trim());
+
+document.write("Original Array = " + arr.join(", ") + "<br>");
+
+let value = prompt("Enter element to remove:");
+if (value === null) value = "";
+document.write("Element to Remove = " + value + "<br>");
+
+let i = arr.indexOf(value);
+if (i !== -1) {
+    arr.splice(i, 1);
+    document.write("After Removal = " + arr.join(", ") + "<br>");
+} else {
+    document.write("Element not found. Array = " + arr.join(", ") + "<br>");
+}
+
+let search = prompt("Enter element to search:");
+if (search === null) search = "";
+document.write("Search Element = " + search + "<br>");
+document.write("Contains Element = " + arr.includes(search) + "<br>");
+
+arr.length = 0;
+document.write("Empty Array Length = " + arr.length);
+</script>
+</body>
+</html>

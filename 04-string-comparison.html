@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let a = prompt("Enter first string:");
+let b = prompt("Enter second string:");
+
+if (a === null) a = "";
+if (b === null) b = "";
+
+document.write("First String = " + a + "<br>");
+document.write("Second String = " + b + "<br>");
+document.write("Using == : " + (a == b) + "<br>");
+document.write("Using === : " + (a === b) + "<br>");
+document.write("Using localeCompare() : " + a.localeCompare(b) + "<br>");
+document.write("Ignoring Case : " + (a.toLowerCase() === b.toLowerCase()));
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let arr = [];
+
+let name = prompt("Enter student name:");
+if (name === null) name = "";
+let ageInput = prompt("Enter student age:");
+let age = Number(ageInput);
+
+document.write("Student Name = " + name + "<br>");
+document.write("Student Age = " + age + "<br>");
+
+arr.push({ name: name, age: age });
+
+document.write("Array = " + JSON.stringify(arr) + "<br>");
+document.write("Is Array = " + Array.isArray(arr));
+</script>
+</body>
+</html>

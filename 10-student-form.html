@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validate()">
+Name: <input type="text" id="name"><br><br>
+Address: <input type="text" id="address"><br><br>
+City: <input type="text" id="city"><br><br>
+State: <input type="text" id="state"><br><br>
+
+Gender:
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+<br><br>
+
+Mobile: <input type="text" id="mobile"><br><br>
+Email: <input type="text" id="email"><br><br>
+
+<input type="submit" value="Submit">
+</form>
+
+<p id="msg"></p>
+
+<script>
+function validate() {
+    let n = document.getElementById("name").value.trim();
+    let a = document.getElementById("address").value.trim();
+    let c = document.getElementById("city").value.trim();
+    let s = document.getElementById("state").value.trim();
+    let m = document.getElementById("mobile").value.trim();
+    let e = document.getElementById("email").value.trim();
+    let g = document.querySelector('input[name="gender"]:checked');
+
+    if (!n || !a || !c || !s || !m || !e || !g) {
+        alert("Please fill all fields.");
+        return false;
+    }
+
+    if (!/^[a-zA-Z ]+$/.test(n)) {
+        alert("Enter a valid name.");
+        return false;
+    }
+
+    if (!/^[0-9]{10}$/.test(m)) {
+        alert("Enter a valid 10-digit mobile number.");
+        return false;
+    }
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)) {
+        alert("Enter a valid email address.");
+        return false;
+    }
+
+    document.body.innerHTML =
+        "<h1>Congratulations!</h1>" +
+        "<h2>Welcome " + n + "</h2>" +
+        "Name = " + n + "<br>" +
+        "Address = " + a + "<br>" +
+        "City = " + c + "<br>" +
+        "State = " + s + "<br>" +
+        "Gender = " + g.value + "<br>" +
+        "Mobile = " + m + "<br>" +
+        "Email = " + e;
+
+    return false;
+}
+</script>
+</body>
+</html>

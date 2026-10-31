@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let str = prompt("Enter a string:");
+
+if (str === null) {
+    document.write("Input cancelled.");
+} else {
+    let rev = str.split("").reverse().join("");
+
+    document.write("Original String = " + str + "<br>");
+    document.write("Reversed String = " + rev + "<br>");
+
+    let oldChar = prompt("Enter character/text to replace:");
+    if (oldChar === null) oldChar = "";
+
+    let newChar = prompt("Enter replacement text:");
+    if (newChar === null) newChar = "";
+
+    document.write("Text to Replace = " + oldChar + "<br>");
+    document.write("Replacement Text = " + newChar + "<br>");
+
+    if (oldChar === "") {
+        document.write("Replaced String = " + str + "<br>");
+    } else {
+        document.write("Replaced String = " + str.split(oldChar).join(newChar) + "<br>");
+    }
+
+    if (str.toLowerCase() === rev.toLowerCase())
+        document.write("Palindrome = Yes");
+    else
+        document.write("Palindrome = No");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+let n = Number(prompt("Enter countdown time in seconds:"));
+
+if (!Number.isInteger(n) || n < 1) {
+    document.write("Please enter a positive whole number.");
+} else {
+    document.write("Starting Time = " + n + " seconds<br>");
+    document.write("Countdown: <span id='timer'>" + n + "</span>");
+
+    let x = setInterval(function () {
+        n--;
+        document.getElementById("timer").innerHTML = n;
+
+        if (n <= 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "Time Up!";
+        }
+    }, 1000);
+}
+</script>
+</body>
+</html>
